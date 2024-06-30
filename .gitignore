@@ -1,0 +1,12 @@
+# Ignore vendor dependencies
+/vendor/
+
+# Ignore node dependencies
+/node_modules/
+
+# Ignore environment variables file
+.env
+
+# Ignore IDE/editor config files
+.idea/
+.vscode/
