@@ -488,58 +488,48 @@ if (!empty($closuredata)) {
     }
 </style>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="src/js/bootstrap.bundle.min.js"></script>
-<script src="src/lib/wow/wow.min.js"></script>
-<script src="src/lib/easing/easing.min.js"></script>
-<script src="src/lib/waypoints/waypoints.min.js"></script>
-<script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="src/lib/tempusdominus/js/moment.min.js"></script>
-<script src="src/lib/tempusdominus/js/moment-timezone.min.js"></script>
-<script src="src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src="src/lib/twentytwenty/jquery.event.move.js"></script>
-<script src="src/lib/twentytwenty/jquery.twentytwenty.js"></script>
-
 <script src="src/js/header.js"></script>
 
 <script>
     UpdateDocumentTitle("Home");
 
-    $(document).ready(function () {
-        $(".reviews-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            nav: true,
-            navText: [$('.owl-prev'), $('.owl-next')],
-            dots: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            autoWidth: false
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+        var reviewsCarousel = document.querySelector('.reviews-carousel');
 
-        // Function to handle window resize event
-        function handleWindowResize() {
-            // Get the .owl-nav element
-            var owlNav = $('.owl-nav');
+        if (reviewsCarousel) {
+            var owlCarousel = new OwlCarousel(reviewsCarousel, {
+                items: 1,
+                loop: true,
+                nav: true,
+                navText: [document.querySelector('.owl-prev'), document.querySelector('.owl-next')],
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                autoWidth: false
+            });
 
-            // Check if the window width is less than a certain threshold
-            if ($(window).width() < 768) { // Adjust the threshold as needed
-                // Remove the inline style if present
-                owlNav.css('width', '');
-            } else {
-                // Add the inline style if not present
-                owlNav.css('width', ''); // Or any other desired width
+            // Function to handle window resize event
+            function handleWindowResize() {
+                var owlNav = document.querySelector('.owl-nav');
+
+                // Check if the window width is less than a certain threshold
+                if (window.innerWidth < 768) { // Adjust the threshold as needed
+                    // Remove the inline style if present
+                    owlNav.style.width = '';
+                } else {
+                    // Add the inline style if not present
+                    owlNav.style.width = ''; // Or any other desired width
+                }
             }
+
+            // Add event listener for window resize
+            window.addEventListener('resize', handleWindowResize);
+
+            // Call the function on page load to handle initial window size
+            handleWindowResize();
         }
-
-        // Add event listener for window resize
-        $(window).on('resize', handleWindowResize);
-
-        // Call the function on page load to handle initial window size
-        handleWindowResize();
     });
-
 
 </script>
 <?php include ("footer.php"); ?>

@@ -22,12 +22,6 @@ $lunchdata = $operating->getlunchtime();
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-
-    <!-- Libraries Stylesheet -->
-    <link href="src/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="src/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="src/lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
-
     <!-- Calendar Lib -->
     <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
@@ -36,7 +30,8 @@ $lunchdata = $operating->getlunchtime();
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=BOOTSTRAP_CSS_PATH?>/bootstrap.min.css" rel="stylesheet">
+    <script defer src="<?=BOOTSTRAP_JS_PATH?>/bootstrap.min.js"></script>
     <link href="src/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
 
@@ -61,23 +56,6 @@ $lunchdata = $operating->getlunchtime();
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light">
-        <div class="row gx-0">
-            <div class="col-md-6 offset-md-3 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Fri :
-                        <?php
-                        $operatestart = date("g:i A", strtotime($opendata->start_time));
-                        $operateend = date("g:i A", strtotime($opendata->end_time));
-                        echo "$operatestart - $operateend";
-                        ?>
-                        , Sat & Sun: Closed</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
@@ -106,6 +84,9 @@ $lunchdata = $operating->getlunchtime();
         </div>
     </nav>
     <!-- Navbar End -->
+
+    <!-- main section start  -->
+    <main style="background-color: white;">
 
 
     <script>

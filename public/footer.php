@@ -1,3 +1,6 @@
+</main>
+<!-- main section end  -->
+
 <footer class="site-footer section-padding" id="contact" style="background: #F9F9F9;">
     <div class="container">
         <div class="row">
@@ -6,6 +9,10 @@
                 <h5 class="mb-lg-4 mb-3">Opening Hours</h5>
 
                 <ul class="list-group list-group-flush">
+                    <?php 
+                    $operatestart = date("g:i A", strtotime($opendata->start_time));
+                    $operateend = date("g:i A", strtotime($opendata->end_time));
+                    ?>
                     <li class="list-group-item bg-transparent text-muted py-3 d-flex" style="font-size: 18px; ">
                         Monday - Friday
                         <span class="fw-semibold" style="margin-left: auto;"><?php echo "$operatestart - $operateend"; ?></span>
