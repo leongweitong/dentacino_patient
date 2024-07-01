@@ -55,7 +55,7 @@ $lunchdata = $operating->getlunchtime();
 
 </head>
 
-<body>
+<body style="background-color: white;">
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
