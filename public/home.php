@@ -120,7 +120,7 @@ $closuredata = $closureDate->getClosureDateDetails();
                             <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
                                 <div class="rounded-top overflow-hidden">
                                     <img class="img-fluid"
-                                        src="<?php echo ADMINIMAGEPATH . '/service/' . $row->ServiceType_Picture; ?>" alt="">
+                                        src="<?= SERVICE_IMAGE_PATH?>/<?=$row->ServiceType_Picture?>" alt="">
                                 </div>
                                 <div class="position-relative bg-light rounded-bottom text-center p-4">
                                     <h5 class="m-0"><?php echo $row->ServiceType_Name; ?></h5>
@@ -139,7 +139,7 @@ $closuredata = $closureDate->getClosureDateDetails();
                             <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.3s">
                                 <div class="rounded-top overflow-hidden">
                                     <img class="img-fluid"
-                                        src="<?php echo ADMINIMAGEPATH . '/service/' . $row->ServiceType_Picture; ?>" alt="">
+                                        src="<?= SERVICE_IMAGE_PATH?>/<?=$row->ServiceType_Picture?>" alt="">
                                 </div>
                                 <div class="position-relative bg-light rounded-bottom text-center p-4">
                                     <h5 class="m-0"><?php echo $row->ServiceType_Name; ?></h5>
