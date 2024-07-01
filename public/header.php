@@ -32,7 +32,7 @@ $lunchdata = $operating->getlunchtime();
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?=BOOTSTRAP_CSS_PATH?>/bootstrap.min.css" rel="stylesheet">
     <script defer src="<?=BOOTSTRAP_JS_PATH?>/bootstrap.min.js"></script>
-    <link href="src/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?=BOOTSTRAP_ICON_PATH?>/bootstrap-icons.css" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
 
     <style>
@@ -84,10 +84,6 @@ $lunchdata = $operating->getlunchtime();
         </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- main section start  -->
-    <main style="background-color: white;">
-
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -142,13 +138,3 @@ $lunchdata = $operating->getlunchtime();
             });
         });
     </script>
-
-    <script src="src/lib/wow/wow.min.js"></script>
-    <script src="src/lib/easing/easing.min.js"></script>
-    <script src="src/lib/waypoints/waypoints.min.js"></script>
-    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="src/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="src/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="src/lib/twentytwenty/jquery.event.move.js"></script>
-    <script src="src/lib/twentytwenty/jquery.twentytwenty.js"></script>

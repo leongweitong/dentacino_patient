@@ -1,6 +1,3 @@
-</main>
-<!-- main section end  -->
-
 <footer class="site-footer section-padding" id="contact" style="background: #F9F9F9;">
     <div class="container">
         <div class="row">
@@ -71,14 +68,6 @@
 </body>
 </html>
 
-<link href="src/css/bootstrap.min.css" rel="stylesheet">
-
-<link href="src/css/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-
-<link href="src/css/owl.carousel.min.css" rel="stylesheet">
-
-<link href="src/css/owl.theme.default.min.css" rel="stylesheet">
-
 <style>
     footer {
         padding: 20px;
@@ -127,54 +116,8 @@
     }
 </style>
 
-<script src="src/js/jquery.min.js"></script>
-<script src="src/js/bootstrap.bundle.min.js"></script>
-<script src="src/js/owl.carousel.min.js"></script>
-<script src="src/js/scrollspy.min.js"></script>
-<script src="src/js/header.js"></script>
 <script>
-    (function ($) {
-
-        "use strict";
-
-        // REVIEWS CAROUSEL
-        $('.reviews-carousel').owlCarousel({
-            center: true,
-            loop: true,
-            nav: true,
-            dots: false,
-            autoplay: true,
-            autoplaySpeed: 300,
-            smartSpeed: 500,
-            responsive:{
-            0:{
-                items:1,
-            },
-            768:{
-                items:2,
-                margin: 100,
-            },
-            1280:{
-                items:2,
-                margin: 100,
-            }
-            }
-        });
-
-
-        // REVIEWS NAVIGATION
-        function ReviewsNavResize(){
-        $(".navbar").scrollspy({ offset: -94 });
-
-        var ReviewsOwlItem = $('.reviews-carousel .owl-item').width();
-
-        $('.reviews-carousel .owl-nav').css({'width' : (ReviewsOwlItem) + 'px'});
-        }
-
-        $(window).on("resize", ReviewsNavResize);
-        $(document).on("ready", ReviewsNavResize);
-        
-    })(window.jQuery);
+    
 </script>
 </body>
 </html>

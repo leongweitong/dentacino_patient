@@ -240,16 +240,6 @@ if (!empty($closuredata)) {
 }
 ?>
 
-<link href="src/css/bootstrap.min.css" rel="stylesheet">
-<link href="src/css/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-
-<link href="src/css/remixicon/remixicon.css" rel="stylesheet">
-<link href="src/css/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-<link href="src/css/owl.carousel.min.css" rel="stylesheet">
-
-<link href="src/css/owl.theme.default.min.css" rel="stylesheet">
 <style>
     #heros {
         width: 100%;
@@ -488,48 +478,46 @@ if (!empty($closuredata)) {
     }
 </style>
 
-<script src="src/js/header.js"></script>
-
 <script>
     UpdateDocumentTitle("Home");
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var reviewsCarousel = document.querySelector('.reviews-carousel');
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var reviewsCarousel = document.querySelector('.reviews-carousel');
 
-        if (reviewsCarousel) {
-            var owlCarousel = new OwlCarousel(reviewsCarousel, {
-                items: 1,
-                loop: true,
-                nav: true,
-                navText: [document.querySelector('.owl-prev'), document.querySelector('.owl-next')],
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                autoWidth: false
-            });
+    //     if (reviewsCarousel) {
+    //         var owlCarousel = new OwlCarousel(reviewsCarousel, {
+    //             items: 1,
+    //             loop: true,
+    //             nav: true,
+    //             navText: [document.querySelector('.owl-prev'), document.querySelector('.owl-next')],
+    //             dots: true,
+    //             autoplay: true,
+    //             autoplayTimeout: 5000,
+    //             autoplayHoverPause: true,
+    //             autoWidth: false
+    //         });
 
-            // Function to handle window resize event
-            function handleWindowResize() {
-                var owlNav = document.querySelector('.owl-nav');
+    //         // Function to handle window resize event
+    //         function handleWindowResize() {
+    //             var owlNav = document.querySelector('.owl-nav');
 
-                // Check if the window width is less than a certain threshold
-                if (window.innerWidth < 768) { // Adjust the threshold as needed
-                    // Remove the inline style if present
-                    owlNav.style.width = '';
-                } else {
-                    // Add the inline style if not present
-                    owlNav.style.width = ''; // Or any other desired width
-                }
-            }
+    //             // Check if the window width is less than a certain threshold
+    //             if (window.innerWidth < 768) { // Adjust the threshold as needed
+    //                 // Remove the inline style if present
+    //                 owlNav.style.width = '';
+    //             } else {
+    //                 // Add the inline style if not present
+    //                 owlNav.style.width = ''; // Or any other desired width
+    //             }
+    //         }
 
-            // Add event listener for window resize
-            window.addEventListener('resize', handleWindowResize);
+    //         // Add event listener for window resize
+    //         window.addEventListener('resize', handleWindowResize);
 
-            // Call the function on page load to handle initial window size
-            handleWindowResize();
-        }
-    });
+    //         // Call the function on page load to handle initial window size
+    //         handleWindowResize();
+    //     }
+    // });
 
 </script>
 <?php include ("footer.php"); ?>

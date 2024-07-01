@@ -10,3 +10,4 @@ define("SERVICE_IMAGE_PATH", "http://localhost/dentacino_patient/public/src/imag
 
 define("BOOTSTRAP_CSS_PATH", "../node_modules/bootstrap/dist/css");
 define("BOOTSTRAP_JS_PATH", "../node_modules/bootstrap/dist/js");
+define("BOOTSTRAP_ICON_PATH", "../node_modules/bootstrap-icons/font");
