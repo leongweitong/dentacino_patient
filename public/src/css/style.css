@@ -215,7 +215,7 @@ a:hover {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  display: flex !important;
+  display: flex;
   justify-content: center !important;
   align-items: center !important;
   background-color: rgba(255, 255, 255, 0.6) !important;
