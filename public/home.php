@@ -164,12 +164,14 @@ if (!empty($feedbackdata)) {
                 <div class="col-12">
                     <h2 class="text-center mb-lg-5 mb-4" style="font-size: 36px; font-weight: 700;">Testimonial</h2>
 
-                    <div class="owl-carousel reviews-carousel">
-
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center fb-15">
+                            <span class="button3 feedback-arrow-left">&larr;</span>
+                        </div>
                         <?php
                         foreach ($feedbackdata as $row) {
                             ?>
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded">
+                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded fb-70 d-none border">
                                 <div class="reviews-stars">
                                     <?php
                                     for ($i = 1; $i <= 5; $i++) {
@@ -194,6 +196,9 @@ if (!empty($feedbackdata)) {
                                 </figcaption>
                             </figure>
                         <?php } ?>
+                        <div class="d-flex align-items-center justify-content-center fb-15">
+                            <span class="button3 feedback-arrow-right">&rarr;</span>
+                        </div>
                     </div>
                 </div>
 
@@ -385,80 +390,9 @@ if (!empty($closuredata)) {
         margin-bottom: 25px;
     }
 
-    .reviews-image {
-        border-radius: 100px;
-        width: 70px !important;
-        height: 70px !important;
-    }
-
-    .reviews-carousel .owl-item {
-        opacity: 0.45;
-    }
-
-    .reviews-carousel .owl-item.active.center {
-        opacity: 1;
-    }
-
-    .reviews-carousel .owl-item.active.center .reviews-thumb {
-        background: #000000;
-    }
-
-    .reviews-carousel .owl-item.active.center .reviews-thumb,
-    .reviews-carousel .owl-item.active.center .reviews-text {
-        color: #FFFFFF;
-    }
-
-    .reviews-carousel .owl-nav {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-        width: 50%;
-    }
-
-    .reviews-carousel .owl-nav span {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        display: block;
-    }
-
-    .reviews-carousel .owl-nav .owl-prev {
-        position: relative;
-        left: -80px;
-    }
-
-    .reviews-carousel .owl-nav .owl-next {
-        position: relative;
-        right: -80px;
-    }
-
-    .reviews-carousel .owl-prev span,
-    .reviews-carousel .owl-next span {
-        color: transparent;
-    }
-
-    .reviews-carousel .owl-prev span::before,
-    .reviews-carousel .owl-next span::before {
-        font-family: bootstrap-icons;
-        display: block;
-        font-size: 32px;
-        color: #717275;
-        width: 35px;
-        height: 35px;
-    }
-
-    .reviews-carousel .owl-prev span::before {
-        content: "\f12f";
-    }
-
-    .reviews-carousel .owl-next span::before {
-        content: "\f138";
+    .feedback-arrow-left,
+    .feedback-arrow-right{
+        cursor: pointer;
     }
 
     .closuretable tr {
@@ -469,55 +403,29 @@ if (!empty($closuredata)) {
         background-color: var(--primary) !important;
         color: var(--light) !important;
     }
-
-
-    @media only screen and (max-width: 768px) {
-        .reviews-carousel .owl-nav {
-            display: none;
-        }
-    }
 </style>
 
 <script>
     UpdateDocumentTitle("Home");
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var reviewsCarousel = document.querySelector('.reviews-carousel');
+    const reviews = document.querySelectorAll('.reviews-thumb')
+    const leftArrow = document.querySelector('.feedback-arrow-left')
+    const rightArrow = document.querySelector('.feedback-arrow-right')
+    let showingFeedback = 0
 
-    //     if (reviewsCarousel) {
-    //         var owlCarousel = new OwlCarousel(reviewsCarousel, {
-    //             items: 1,
-    //             loop: true,
-    //             nav: true,
-    //             navText: [document.querySelector('.owl-prev'), document.querySelector('.owl-next')],
-    //             dots: true,
-    //             autoplay: true,
-    //             autoplayTimeout: 5000,
-    //             autoplayHoverPause: true,
-    //             autoWidth: false
-    //         });
+    reviews[showingFeedback].classList.remove('d-none')
 
-    //         // Function to handle window resize event
-    //         function handleWindowResize() {
-    //             var owlNav = document.querySelector('.owl-nav');
+    leftArrow.addEventListener('click', function(){
+        reviews[showingFeedback].classList.add('d-none')
+        showingFeedback = showingFeedback === 0 ? reviews.length - 1 : showingFeedback - 1
+        reviews[showingFeedback].classList.remove('d-none')
+    })
 
-    //             // Check if the window width is less than a certain threshold
-    //             if (window.innerWidth < 768) { // Adjust the threshold as needed
-    //                 // Remove the inline style if present
-    //                 owlNav.style.width = '';
-    //             } else {
-    //                 // Add the inline style if not present
-    //                 owlNav.style.width = ''; // Or any other desired width
-    //             }
-    //         }
-
-    //         // Add event listener for window resize
-    //         window.addEventListener('resize', handleWindowResize);
-
-    //         // Call the function on page load to handle initial window size
-    //         handleWindowResize();
-    //     }
-    // });
+    rightArrow.addEventListener('click', function(){
+        reviews[showingFeedback].classList.add('d-none')
+        showingFeedback = showingFeedback === reviews.length - 1 ? 0 : showingFeedback + 1
+        reviews[showingFeedback].classList.remove('d-none')
+    })
 
 </script>
 <?php include ("footer.php"); ?>
