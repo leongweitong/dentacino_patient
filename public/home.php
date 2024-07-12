@@ -164,23 +164,19 @@ if (!empty($feedbackdata)) {
                 <div class="col-12">
                     <h2 class="text-center mb-lg-5 mb-4" style="font-size: 36px; font-weight: 700;">Testimonial</h2>
 
-                    <div class="d-flex align-items-center justify-content-center">
+                    <div id="feedback-container" class="d-flex align-items-center justify-content-center">
                         <div class="d-flex align-items-center justify-content-center fb-15">
                             <span class="button3 feedback-arrow-left">&larr;</span>
                         </div>
-                        <?php
-                        foreach ($feedbackdata as $row) {
-                            ?>
-                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded fb-70 d-none border">
+
+                        <div class="fb-70">
+                            <?php foreach ($feedbackdata as $row): ?>
+                            <figure class="reviews-thumb d-flex flex-wrap align-items-center rounded border">
                                 <div class="reviews-stars">
-                                    <?php
-                                    for ($i = 1; $i <= 5; $i++) {
-                                        if ($i <= $row->Feedback_Star) {
-                                            echo '<i class="bi bi-star-fill"></i>';
-                                        } else {
-                                            echo '<i class="bi bi-star"></i>';
-                                        }
-                                    }
+                                    <?php 
+                                        for ($i = 1; $i <= 5; $i++) 
+                                            echo $i <= $row->Feedback_Star ? 
+                                            '<i class="bi bi-star-fill"></i>' : '<i class="bi bi-star"></i>' 
                                     ?>
                                 </div>
                                 <p class="text-primary d-block mt-2 mb-0 w-100">
@@ -195,7 +191,9 @@ if (!empty($feedbackdata)) {
                                     <strong><?php echo $row->Patient_Name; ?></strong>
                                 </figcaption>
                             </figure>
-                        <?php } ?>
+                            <?php endforeach; ?>
+                        </div>
+
                         <div class="d-flex align-items-center justify-content-center fb-15">
                             <span class="button3 feedback-arrow-right">&rarr;</span>
                         </div>
@@ -425,10 +423,20 @@ if (!empty($closuredata)) {
     });
     observer.observe(heroContainer);
 
+    const feedbackContainer = document.querySelector('#feedback-container');
     const reviews = document.querySelectorAll('.reviews-thumb')
     const leftArrow = document.querySelector('.feedback-arrow-left')
     const rightArrow = document.querySelector('.feedback-arrow-right')
     let showingFeedback = 0
+    let feedbackContainerHeight = 0
+
+    reviews.forEach(review => {
+        const currentHeight = review.getBoundingClientRect().height
+        // console.log(review.getBoundingClientRect(), currentHeight)
+        feedbackContainerHeight = currentHeight > feedbackContainerHeight ? currentHeight : feedbackContainerHeight
+        review.classList.add('d-none')
+    });
+    feedbackContainer.style.height = `${feedbackContainerHeight}px`;
 
     reviews[showingFeedback].classList.remove('d-none')
 
