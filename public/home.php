@@ -413,7 +413,7 @@ if (!empty($closuredata)) {
 
     let showHeader = (entries, observer) => {
         const entry = entries[0]
-
+        // console.log(entry)
         if (!entry.isIntersecting) navContainer.classList.add('sticky-top');
         else navContainer.classList.remove('sticky-top');
     };
@@ -421,7 +421,7 @@ if (!empty($closuredata)) {
     let observer = new IntersectionObserver(showHeader, {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5
+        threshold: 0
     });
     observer.observe(heroContainer);
 
