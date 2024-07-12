@@ -296,20 +296,6 @@ if (!empty($closuredata)) {
         justify-content: space-between;
     }
 
-    .owl-prev,
-    .owl-next {
-        background: #333;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .owl-prev:hover,
-    .owl-next:hover {
-        background: #555;
-    }
-
     .section-title h5::before {
         position: absolute;
         content: "";
@@ -400,6 +386,12 @@ if (!empty($closuredata)) {
     .closuretable th {
         background-color: var(--primary) !important;
         color: var(--light) !important;
+    }
+
+    @media (max-width: 768px) {
+        #feedback-container .fb-70{
+            flex-basis: 100%;
+        }
     }
 </style>
 
