@@ -420,7 +420,7 @@ if (!empty($closuredata)) {
 
     let observer = new IntersectionObserver(showHeader, {
         root: null,
-        rootMargin: "0px",
+        rootMargin: `-${navContainer.getBoundingClientRect().height}px`,
         threshold: 0
     });
     observer.observe(heroContainer);
