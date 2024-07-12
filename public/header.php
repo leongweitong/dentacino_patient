@@ -58,7 +58,7 @@ $lunchdata = $operating->getlunchtime();
 
         @media (max-width: 768px) {
             .logo{
-                width: 200px;
+                width: 300px;
             }
             .navbar-toggler-icon{
                 height: 1em;
