@@ -25,7 +25,7 @@ $closuredata = $closureDate->getClosureDateDetails();
         <a href="<?=PUBLIC_API?>/appointment.php" class="button3 btn-get-started scrollto">Appointment Now !</a>
     </div>
 </section>
-<section id="why">
+<section id="why" class="observe-session">
     <div class="container custom-container py-4">
         <div class="row">
             <div class="col-md-6 image-container img-fluid">
@@ -52,7 +52,7 @@ $closuredata = $closureDate->getClosureDateDetails();
         </div>
     </div>
 </section>
-<section id="about">
+<section id="about" class="observe-session">
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5">
@@ -96,7 +96,7 @@ $closuredata = $closureDate->getClosureDateDetails();
         </div>
     </div>
 </section>
-<section id="service">
+<section id="service" class="observe-session">
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5 mb-5">
@@ -154,13 +154,11 @@ $closuredata = $closureDate->getClosureDateDetails();
     </div>
     </div>
 </section>
-<?php
-if (!empty($feedbackdata)) {
-    ?>
-    <section class="section-padding pb-0 mb-5" id="reviews">
+
+<?php if (!empty($feedbackdata)) { ?>
+    <section class="section-padding pb-0 mb-5 observe-session" id="reviews">
         <div class="container">
             <div class="row">
-
                 <div class="col-12">
                     <h2 class="text-center mb-lg-5 mb-4" style="font-size: 36px; font-weight: 700;">Testimonial</h2>
 
@@ -199,20 +197,13 @@ if (!empty($feedbackdata)) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </section>
-    <?php
-}
-?>
-<?php
-if (!empty($closuredata)) {
+<?php } ?>
 
-
-    ?>
-    <section class="section-padding pb-0 mb-5" id="closure">
+<?php if (!empty($closuredata)) { ?>
+    <section class="section-padding pb-0 mb-5 observe-session" id="closure">
         <div class="container">
             <h2 class="text-center mb-lg-5 mb-4" style="font-size: 36px; font-weight: 700;">Closure Date</h2>
             <table class="closuretable table table-bordered text-center">
@@ -239,11 +230,19 @@ if (!empty($closuredata)) {
             </table>
         </div>
     </section>
-    <?php
-}
-?>
+<?php } ?>
 
 <style>
+    .observe-session{
+        visibility: hidden;
+        transform: translateY(40px);
+        transition: all 1s ease-out;
+    }
+    .show-observe-session{
+        visibility: visible;
+        transform: translateY(0px);
+    }
+
     #heros {
         width: 100%;
         height: 90vh;
@@ -442,6 +441,27 @@ if (!empty($closuredata)) {
         reviews[showingFeedback].classList.add('d-none')
         showingFeedback = showingFeedback === reviews.length - 1 ? 0 : showingFeedback + 1
         reviews[showingFeedback].classList.remove('d-none')
+    })
+
+    const observeSessions = document.querySelectorAll('.observe-session')
+    let scrollAnimation = (entries, observer) => {
+        entries.forEach(entry => {
+            // console.log(entry)
+            if (entry.isIntersecting) {
+                // console.log(entry.target)
+                entry.target.classList.add('show-observe-session')
+                observer.unobserve(entry.target)
+            }
+        })
+    };
+
+    let sessionObserver = new IntersectionObserver(scrollAnimation, {
+        root: null,
+        rootMargin: `0px`,
+        threshold: 0.1
+    });
+    observeSessions.forEach(session => {
+        sessionObserver.observe(session);
     })
 
 </script>
