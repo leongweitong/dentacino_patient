@@ -51,6 +51,20 @@ $lunchdata = $operating->getlunchtime();
         .navbar-light .container .navbar-nav .nav-link:hover {
             color: #06A3DA;
         }
+
+        .logo{
+            width: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .logo{
+                width: 200px;
+            }
+            .navbar-toggler-icon{
+                height: 1em;
+                width: 1em;
+            }
+        }
     </style>
 
 </head>
@@ -58,11 +72,11 @@ $lunchdata = $operating->getlunchtime();
 <body style="background-color: white;">
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm p-lg-0 p-md-2">
         <div class="container">
             <a href="home.php" class="navbar-brand p-0">
                 <h1 class="m-0 text-primary">
-                    <img width="400" src="src/logo/logo2.jpg" title="Home">
+                    <img class="logo" src="src/logo/logo2.jpg" title="Home">
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

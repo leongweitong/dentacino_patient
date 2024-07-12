@@ -408,6 +408,23 @@ if (!empty($closuredata)) {
 <script>
     UpdateDocumentTitle("Home");
 
+    const navContainer = document.querySelector('nav')
+    const heroContainer = document.querySelector('#heros')
+
+    let showHeader = (entries, observer) => {
+        const entry = entries[0]
+
+        if (!entry.isIntersecting) navContainer.classList.add('sticky-top');
+        else navContainer.classList.remove('sticky-top');
+    };
+
+    let observer = new IntersectionObserver(showHeader, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+    });
+    observer.observe(heroContainer);
+
     const reviews = document.querySelectorAll('.reviews-thumb')
     const leftArrow = document.querySelector('.feedback-arrow-left')
     const rightArrow = document.querySelector('.feedback-arrow-right')
