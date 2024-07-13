@@ -3,7 +3,7 @@ This is a system are deisgn for let user making apppointment for dental service.
 
 <h2>Clone This Project</h2>
 You can type the following command to your terminal：
-git clone https://github.com/leongweitong/dentacino_patient.git
+<h3>git clone https://github.com/leongweitong/dentacino_patient.git</h3>
 
 <h2>Set Enviroment</h2>
 this project have using some backend and fronend library, so make sure you have download composer and node.js
