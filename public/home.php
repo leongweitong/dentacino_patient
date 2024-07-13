@@ -26,7 +26,7 @@ $closuredata = $closureDate->getClosureDateDetails();
     </div>
 </section>
 <section id="why" class="observe-session">
-    <div class="container custom-container py-4">
+    <div class="container custom-container py-5">
         <div class="row">
             <div class="col-md-6 image-container img-fluid">
                 <img src="src/image/why.webp" alt="Modern Facilities">
@@ -245,7 +245,6 @@ $closuredata = $closureDate->getClosureDateDetails();
 
     #heros {
         width: 100%;
-        height: 90vh;
         background: url("src/image/hero-bg-2.jpg") center;
         background-size: cover;
         display: flex;
@@ -395,6 +394,14 @@ $closuredata = $closureDate->getClosureDateDetails();
 
     const navContainer = document.querySelector('nav')
     const heroContainer = document.querySelector('#heros')
+
+    const headerHeight = navContainer.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    function adjustHeroHeight() {
+        heroContainer.style.height = `${viewportHeight - headerHeight}px`;
+    }
+    adjustHeroHeight()
 
     let showHeader = (entries, observer) => {
         const entry = entries[0]
