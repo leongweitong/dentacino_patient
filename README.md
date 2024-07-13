@@ -8,5 +8,5 @@ git clone https://github.com/leongweitong/dentacino_patient.git
 <h2>Set Enviroment</h2>
 this project have using some backend and fronend library, so make sure you have download composer and node.js
 then you can initial project by running the following command.
-npm install
-composer install
+<h3>npm install</h3>
+<h3>composer install</h3>
