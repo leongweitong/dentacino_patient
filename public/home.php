@@ -96,12 +96,12 @@ $closuredata = $closureDate->getClosureDateDetails();
         </div>
     </div>
 </section>
-<section id="service" class="observe-session">
+<section id="service" class="">
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5 mb-5">
                 <div class="col-lg-5 wow zoomIn" data-wow-delay="0.3s" style="min-height: 400px;">
-                    <div class="twentytwenty-container position-relative h-100 rounded overflow-hidden">
+                    <div class="twentytwenty-container position-relative h-100 rounded overflow-hidden observe-session">
                         <img class="position-absolute w-100 h-100" src="src/image/before.webp"
                             style="object-fit: cover;">
                         <img class="position-absolute w-100 h-100" src="src/image/after.webp"
@@ -110,14 +110,14 @@ $closuredata = $closureDate->getClosureDateDetails();
                 </div>
                 <div class="col-lg-7">
                     <div class="section-title mb-5">
-                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Services</h5>
-                        <h1 class="display-5 mb-0">We Offer The Best Quality Dental Services</h1>
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase observe-session">Our Services</h5>
+                        <h1 class="display-5 mb-0 observe-session">We Offer The Best Quality Dental Services</h1>
                     </div>
                     <div class="row g-5">
                         <?php
                         foreach ($dentaldata1 as $row) {
                             ?>
-                            <div class="col-md-6 service-item wow zoomIn" data-wow-delay="0.6s">
+                            <div class="col-md-6 service-item wow zoomIn observe-session" data-wow-delay="0.6s">
                                 <div class="rounded-top overflow-hidden">
                                     <img class="img-fluid"
                                         src="<?= SERVICE_IMAGE_PATH?>/<?=$row->ServiceType_Picture?>" alt="">
@@ -136,7 +136,7 @@ $closuredata = $closureDate->getClosureDateDetails();
                         <?php
                         foreach ($dentaldata2 as $row) {
                             ?>
-                            <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.3s">
+                            <div class="col-md-3 service-item wow zoomIn observe-session" data-wow-delay="0.3s">
                                 <div class="rounded-top overflow-hidden">
                                     <img class="img-fluid"
                                         src="<?= SERVICE_IMAGE_PATH?>/<?=$row->ServiceType_Picture?>" alt="">
@@ -247,6 +247,8 @@ $closuredata = $closureDate->getClosureDateDetails();
         width: 100%;
         height: 90vh;
         background: url("src/image/hero-bg.webp") top center;
+        /* background: url("src/image/dentists2.png") center; */
+        /* background: url("src/image/dentists3.jpg") center; */
         background-size: cover;
         display: flex;
         align-items: center;
