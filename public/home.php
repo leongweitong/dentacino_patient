@@ -20,9 +20,9 @@ $closuredata = $closureDate->getClosureDateDetails();
 
 <section id="heros" class="d-flex align-items-center">
     <div class="container">
-        <h1 class="text-uppercase fw-bold text-dark">Welcome to DENTACINO</h1>
-        <h2 class="text-dark mt-2">"Making Smiles Shine Brighter"</h2>
-        <a href="<?=PUBLIC_API?>/appointment.php" class="button3 btn-get-started scrollto">Appointment Now !</a>
+        <h1 class="text-uppercase fw-bold" style="color: #333">Welcome to DENTACINO</h1>
+        <h2 class="mt-2 mb-4" style="color: #333">"Making Smiles Shine Brighter"</h2>
+        <a href="<?=PUBLIC_API?>/appointment.php" class="button3 btn-get-started">Appointment Now !</a>
     </div>
 </section>
 <section id="why" class="observe-session">
@@ -89,7 +89,7 @@ $closuredata = $closureDate->getClosureDateDetails();
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn"
-                            src="src/image/about.webp" style="object-fit: cover;">
+                            src="src/image/dentists2.png" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -246,9 +246,7 @@ $closuredata = $closureDate->getClosureDateDetails();
     #heros {
         width: 100%;
         height: 90vh;
-        background: url("src/image/hero-bg.webp") top center;
-        /* background: url("src/image/dentists2.png") center; */
-        /* background: url("src/image/dentists3.jpg") center; */
+        background: url("src/image/hero-bg-2.jpg") center;
         background-size: cover;
         display: flex;
         align-items: center;
@@ -282,10 +280,6 @@ $closuredata = $closureDate->getClosureDateDetails();
         transition: 0.5s;
         color: #fff;
         background: #1977cc;
-    }
-
-    #heros .btn-get-started:hover {
-        background: #3291e6;
     }
 
     .custom-nav {
