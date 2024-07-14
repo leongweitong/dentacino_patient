@@ -76,7 +76,7 @@ $lunchdata = $operating->getlunchtime();
         <div class="container">
             <a href="home.php" class="navbar-brand p-0">
                 <h1 class="m-0 text-primary">
-                    <img class="logo" src="src/logo/logo2.jpg" title="Home">
+                    <img class="logo" src="src/logo/logo2.png" title="Home">
                 </h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
