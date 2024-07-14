@@ -11,5 +11,8 @@ then you can initial project by running the following command.
 <h3>npm install</h3>
 <h3>composer install</h3>
 
+<h2>Set Database</h2>
+Please run dentacino.sql to set database table and data
+
 <h2>Conclusion</h2>
 By following the above step, you able to clone the project and run it in your local computer. Dont forget give me a star before you leave and wish you have a good day¬
